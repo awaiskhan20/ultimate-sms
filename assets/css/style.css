@@ -67,6 +67,9 @@ Page header
 .header .nav .dropdown.open .dropdown-toggle {
  
 }
+.header .chat-toggler .user-details .username {
+    margin-right: 20px;
+}
 
 .header .nav li.dropdown .dropdown-toggle i {
   color: #eff4f8 !important;

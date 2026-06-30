@@ -18,12 +18,12 @@
         <!-- BEGIN SIDEBAR MENU --> 
         <p class="menu-title"></p>
         <ul>
-            <li class="start active"><a href="member.html"><i class="fa fa-users"></i><span class="title">Member</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="category.html"><i class="fa fa-tasks"></i><span class="title">Category</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="sms.html"><i class="fa fa-briefcase"></i><span class="title">SMS</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="media.html"><i class="fa fa-film"></i><span class="title">Media</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="subscriber.html"><i class="fa fa-check-square-o"></i><span class="title">Subscriber</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="webmaster.html"><i class="fa fa-user"></i><span class="title">Webmaster</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="member.php"><i class="fa fa-users"></i><span class="title">Member</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="category.php"><i class="fa fa-tasks"></i><span class="title">Category</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="sms.php"><i class="fa fa-briefcase"></i><span class="title">SMS</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="media.php"><i class="fa fa-film"></i><span class="title">Media</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="subscriber.php"><i class="fa fa-check-square-o"></i><span class="title">Subscriber</span><span class="selected"></span></a></li>
+            <li class="start active"><a href="webmaster.php"><i class="fa fa-user"></i><span class="title">Webmaster</span><span class="selected"></span></a></li>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

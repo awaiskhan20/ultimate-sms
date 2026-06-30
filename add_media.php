@@ -74,7 +74,7 @@
                       </div>
                       <div class="form-actions">
                         <button class="btn btn-danger btn-cons" type="submit"><i class="fa fa-save"></i> Save </button>
-                        <a href="media.html" class="btn btn-primary btn-cons" type="button"><i class="fa fa-times"></i> Cancel </a>
+                        <a href="media.php" class="btn btn-primary btn-cons" type="button"><i class="fa fa-times"></i> Cancel </a>
                       </div>
                     </div>
                   </div>

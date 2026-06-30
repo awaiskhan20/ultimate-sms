@@ -84,11 +84,9 @@
                     <a href="#">
                         <div class="user-details"> 
                             <div class="username">
-            
                                 <span class="bold">Ayaz Ahmed Mast</span>
                             </div>                      
                         </div> 
-                        &nbsp; &nbsp; &nbsp; &nbsp; 
                     </a>    
                     
                     <!-- END NOTIFICATION CENTER -->
@@ -107,7 +105,7 @@
                         </a>
                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="user-options">
                             <li><a href="#" target="_blank">Preview</a></li>
-                            <li><a href="change_password.html">Change Password</a></li>
+                            <li><a href="change_password.php">Change Password</a></li>
                             <li class="divider"></li>                
                             <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
                         </ul>
