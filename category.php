@@ -38,6 +38,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            
+                            require 'config/db.php';
+                            $sql = mysqli_query($connection, "SELECT * FROM category") or die(mysqli_error());
+                            while($row = mysqli_fetch_array($sql)){
+
+                            ?>
                             <tr>
                                 <td>
                                     <div class="checkbox check-default">
@@ -45,16 +52,22 @@
                                         <label for="checkbox"></label>
                                     </div>
                                 </td>
-                                <td>Title</td>
+                                <td><?php echo $row['title']; ?></td>
                                 <td>
-                                    <a href="#" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
-                                    <a href="#"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php if ($row['status'] == 'DEACTIVE'):  ?>
+                                    <a href="update_status.php?id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
+                                    <?php else: ?>
+                                    <a href="update_status.php?id=<?php echo $row['id']; ?>"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php endif ?>
                                 </td>
                                 <td>
                                     <a href="edit_category.php" class="label label-info"> <i class="fa fa-edit"></i></a>
-                                    <a href="#" class="label label-important "> <i class="fa fa-trash-o"></i></a>
+                                    <a href="delete_category.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this category.')" class="label label-important "> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
+
+                            <?php } ?>
+
                         </tbody>
                     </table>
                 </div>
