@@ -24,7 +24,7 @@
                                                 <h4>Basic Information</h4>    
                                                 <div class="row form-row">
                                                     <div class="col-md-12 date">
-                                                        <input name="create_date" id="create_date" type="text"  class="form-control" placeholder="Create Date">
+                                                        <input name="create_date" id="inputDate" type="text"  class="form-control" placeholder="Create Date">
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">

@@ -61,7 +61,7 @@
                                     <?php endif ?>
                                 </td>
                                 <td>
-                                    <a href="edit_category.php" class="label label-info"> <i class="fa fa-edit"></i></a>
+                                    <a href="edit_category.php?id=<?php echo $row['id']; ?>" class="label label-info"> <i class="fa fa-edit"></i></a>
                                     <a href="delete_category.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this category.')" class="label label-important "> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
