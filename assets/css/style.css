@@ -5987,6 +5987,7 @@ ul.progress-list li  .progress{
 }
 .table > tbody > tr > td, .table > tfoot > tr > td{
 	 border-top: 1px solid #E8EDF1;
+	 vertical-align: middle;
 }
 .table-striped tbody > tr:nth-child(2n+1) > td, .table-striped tbody > tr:nth-child(2n+1) > th {
 	background-color:#ecf0f2;

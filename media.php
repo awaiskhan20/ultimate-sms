@@ -20,11 +20,11 @@
                             <a href="#" id="activeAll" class="btn btn-primary tip" data-toggle="tooltip" title="Active Selected"><i class="fa fa-eye"></i></a>
                             <a href="#" id="deactiveAll" class="btn btn-primary tip" data-toggle="tooltip" title="Deactive Selected"><i class="fa fa-eye-slash"></i></a>
                             <a href="#" id="deleteAll" class="btn btn-primary tip" data-toggle="tooltip" title="Delete Selected"><i class="fa fa-trash"></i></a>
-                            <a href="add_media.html" class="btn btn-primary tip" data-toggle="tooltip" title="Create"><i class="fa fa-plus"></i></a>
+                            <a href="add_media.php" class="btn btn-primary tip" data-toggle="tooltip" title="Create"><i class="fa fa-plus"></i></a>
                         </div>
                     </div>
                     <br>
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover vertical-middle">
                         <thead>
                             <tr>
                                 <th style="width:1%">
@@ -33,14 +33,21 @@
                                         <label for="checkbox10"></label>
                                     </div>
                                 </th>
+                                <th style="width:8%">Media Image</th>
                                 <th style="width:40%">Title</th>
                                 <th style="width:15%">Media Type</th>
-                                <th style="width:15%">Media Image</th>
                                 <th style="width:15%">Status</th>
                                 <th style="width:20%">Manage</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            
+                            require 'config/db.php';
+                            $sql = mysqli_query($connection, "SELECT * FROM media") or die(mysqli_error());
+                            while($row = mysqli_fetch_array($sql)){
+
+                            ?>
                             <tr>
                                 <td>
                                     <div class="checkbox check-default">
@@ -48,18 +55,19 @@
                                         <label for="checkbox10"></label>
                                     </div>
                                 </td>
-                                <td>Title</td>
-                                <td>Media Type</td>
-                                <td>img will be here</td>
+                                <td style="text-align: center;"><img src="upload/<?php echo $row['media_image'] ?>" alt="<?php echo $row['title'] ?>" style="margin: 0 auto; width: 70%; height: auto;"></td>
+                                <td><?php echo $row['title'] ?></td>
+                                <td><?php echo $row['media_type'] ?></td>
                                 <td>
-                                    <a href="#" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
-                                    <a href="#"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <a href="update_status.php?id=<?php echo $row['id']; ?>&status=inactive" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
+                                    <a href="update_status.php?id=<?php echo $row['id']; ?>&status=active" > <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
                                 </td>
                                 <td>
-                                    <a href="edit_media.html" class="label label-info"> <i class="fa fa-edit"></i></a>
-                                    <a href="#" class="label label-important "> <i class="fa fa-trash-o"></i></a>
+                                    <a href="edit_media.php?id=<?php echo $row['id']; ?>" class="label label-info"> <i class="fa fa-edit"></i></a>
+                                    <a href="delete_media.php?id=<?php echo $row['id']; ?>" class="label label-important "> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

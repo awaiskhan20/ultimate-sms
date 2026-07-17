@@ -10,77 +10,84 @@
       </div>
       <!-- END PAGE TITLE -->
       <!-- BEGIN PlACE PAGE CONTENT HERE -->
-      <div class="col-md-14">
-          <div class="grid simple">
-              <div class="grid-body no-border">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="grid simple">
-                        <div class="grid-title no-border"></div>
-                          <div class="grid-body no-border">
-                            <div class="row column-seperation">
-                              <div class="col-md-6">
-                                <h4>Basic Information</h4>            
-                                <div class="row form-row">
-                                  <div class="col-md-12">
-                                    <input name="inputDate" id="inputDate" type="text"  class="form-control" placeholder="Create Date">
-                                  </div>
-                                </div>
-                                <div class="row form-row">
-                                  <div class="col-md-12">
-                                    <select name="dropdownMedia" id="dropdownMedia" class="form-control">
-                                      <option value="none">-- Select Media --</option>
-                                      <option value="slideshow">Slideshow</option>
-                                      <option value="gallery">Gallery</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="row form-row">
-                                  <div class="col-md-12">
-                                    <input name="inputTitle" id="inputTitle" type="text"  class="form-control" placeholder="Title">
-                                  </div>
-                                </div>
-                                <div class="row form-row">
-                                  <div class="col-md-12">
-                                    <input name="inputSlug" id="inputSlug" type="text"  class="form-control" placeholder="Slug">
-                                  </div>
-                                </div>
-                                <div class="row form-row">
-                                  <div class="col-md-12">
-                                    <textarea name="inputDescription" id="inputDescription" rows="8" class="form-control" placeholder="Description"></textarea>
-                                  </div>
-                                </div>
-                                </div>
+       <form name="formAdd" id="formAdd" action="act_add_media.php" method="POST" enctype="multipart/form-data">
+        <div class="col-md-14">
+            <div class="grid simple">
+                <div class="grid-body no-border">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="grid simple">
+                          <div class="grid-title no-border"></div>
+                            <div class="grid-body no-border">
+                              <div class="row column-seperation">
                                 <div class="col-md-6">
-                                  <h4>Meta Information</h4>
+                                  <h4>Basic Information</h4>            
                                   <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <input name="create_date" id="inputDate" type="text"  class="form-control" placeholder="Create Date">
+                                    </div>
+                                  </div>
+                                  <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <select name="media_type" id="media_type" class="form-control">
+                                        <option value="none">-- Select Media --</option>
+                                        <option value="slideshow">Slideshow</option>
+                                        <option value="gallery">Gallery</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <input name="title" id="title" type="text"  class="form-control" placeholder="Title">
+                                    </div>
+                                  </div>
+                                  <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <input name="slug" id="slug" type="text"  class="form-control" placeholder="Slug">
+                                    </div>
+                                  </div>
+                                  <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <textarea name="description" id="description" rows="8" class="form-control" placeholder="Description"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="row form-row">
+                                    <div class="col-md-12">
+                                      <textarea name="embed_code" id="embed_code" rows="8" class="form-control" placeholder="Embed Code"></textarea>
+                                    </div>
+                                  </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <h4>Meta Information</h4>
+                                    <div class="row form-row">
+                                        <div class="col-md-12">
+                                          <input type="file" name="media_img" id="media_img"> 
+                                        </div>
+                                    </div>
+                                    <div class="row form-row">
                                       <div class="col-md-12">
-                                        <input type="file" name="file" id="file"> 
+                                        <textarea name="meta_description" id="meta_description" rows="8" class="form-control" placeholder="Meta Descriptions"></textarea>
                                       </div>
-                                  </div>
-                                  <div class="row form-row">
-                                    <div class="col-md-12">
-                                      <textarea name="inputMetaDescriptions" id="inputMetaDescriptions" rows="8" class="form-control" placeholder="Meta Descriptions"></textarea>
+                                    </div>
+                                    <div class="row form-row">
+                                      <div class="col-md-12">
+                                        <input type="text" name="meta_keyword" id="meta_keyword" class="form-control tagsinput" data-a-sign="$" data-role="tagsinput">
+                                      </div>
                                     </div>
                                   </div>
-                                  <div class="row form-row">
-                                    <div class="col-md-12">
-                                      <input type="text" name="inputMetaKeywords" id="inputMetaKeywords" class="form-control tagsinput" data-a-sign="$" data-role="tagsinput">
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="form-actions">
+                          <button class="btn btn-danger btn-cons" type="submit"><i class="fa fa-save"></i> Save </button>
+                          <a href="media.php" class="btn btn-primary btn-cons" type="button"><i class="fa fa-times"></i> Cancel </a>
                         </div>
                       </div>
-                      <div class="form-actions">
-                        <button class="btn btn-danger btn-cons" type="submit"><i class="fa fa-save"></i> Save </button>
-                        <a href="media.php" class="btn btn-primary btn-cons" type="button"><i class="fa fa-times"></i> Cancel </a>
-                      </div>
                     </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                </div>
+            </div>
+        </div>
+      </form>
       <!-- END PLACE PAGE CONTENT HERE -->
   </div>
 </div>
