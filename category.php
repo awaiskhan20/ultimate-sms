@@ -55,9 +55,9 @@
                                 <td><?php echo $row['title']; ?></td>
                                 <td>
                                     <?php if ($row['status'] == 'DEACTIVE'):  ?>
-                                    <a href="update_status.php?id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
+                                    <a href="update_status.php?type=cat&id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
                                     <?php else: ?>
-                                    <a href="update_status.php?id=<?php echo $row['id']; ?>"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <a href="update_status.php?type=cat&id=<?php echo $row['id']; ?>"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
                                     <?php endif ?>
                                 </td>
                                 <td>

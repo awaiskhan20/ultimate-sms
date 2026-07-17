@@ -59,8 +59,11 @@
                                 <td><?php echo $row['title'] ?></td>
                                 <td><?php echo $row['media_type'] ?></td>
                                 <td>
-                                    <a href="update_status.php?id=<?php echo $row['id']; ?>&status=inactive" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
-                                    <a href="update_status.php?id=<?php echo $row['id']; ?>&status=active" > <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php if ($row['status'] == 'DEACTIVE'):  ?>
+                                    <a href="update_status.php?type=med&id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
+                                    <?php else: ?>
+                                    <a href="update_status.php?type=med&id=<?php echo $row['id']; ?>"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php endif ?>
                                 </td>
                                 <td>
                                     <a href="edit_media.php?id=<?php echo $row['id']; ?>" class="label label-info"> <i class="fa fa-edit"></i></a>
