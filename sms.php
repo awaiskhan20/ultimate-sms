@@ -19,7 +19,7 @@
                             <a href="#" id="activeAll" class="btn btn-primary tip" data-toggle="tooltip" title="Active Selected"><i class="fa fa-eye"></i></a>
                             <a href="#" id="deactiveAll" class="btn btn-primary tip" data-toggle="tooltip" title="Deactive Selected"><i class="fa fa-eye-slash"></i></a>
                             <a href="#" id="deleteAll" class="btn btn-primary tip" data-toggle="tooltip" title="Delete Selected"><i class="fa fa-trash"></i></a>
-                            <a href="add_sms.html" class="btn btn-primary tip" data-toggle="tooltip" title="Create"><i class="fa fa-plus"></i></a>
+                            <a href="add_sms.php" class="btn btn-primary tip" data-toggle="tooltip" title="Create"><i class="fa fa-plus"></i></a>
                         </div>
                     </div>
                     <br>
@@ -40,6 +40,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                require_once 'config/db.php';
+                                $query = mysqli_query($connection, "SELECT * FROM message");
+                                while($row = mysqli_fetch_assoc($query)) {
+                            ?>
                             <tr>
                                 <td>
                                     <div class="checkbox check-default">
@@ -47,18 +52,27 @@
                                         <label for="checkbox10"></label>
                                     </div>
                                 </td>
-                                <td>Title</td>
-                                <td>Category</td>
-                                <td>Member</td>
+                                <td><?php echo $row['title']; ?></td>
+                                <td><?php 
+                                    $category_id = $row['category_id'];
+                                    $category_query = mysqli_query($connection, "SELECT * FROM category WHERE id = '$category_id'");
+                                    $category_row = mysqli_fetch_assoc($category_query);
+                                    echo $category_row['title'];
+                                ?></td>
+                                <td><?php echo $row['member_id']; ?></td>
                                 <td>
-                                    <a href="#" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
-                                    <a href="#"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php if ($row['status'] == 'DEACTIVE'):  ?>
+                                    <a href="update_status.php?type=mess&id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
+                                    <?php else: ?>
+                                    <a href="update_status.php?type=mess&id=<?php echo $row['id']; ?>"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
+                                    <?php endif ?>
                                 </td>
                                 <td>
-                                    <a href="edit_sms.html" class="label label-info"> <i class="fa fa-edit"></i></a>
+                                    <a href="edit_sms.php?id=<?php echo $row['id']; ?>" class="label label-info"> <i class="fa fa-edit"></i></a>
                                     <a href="#" class="label label-important "> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
+                            <?php }?>
                         </tbody>
                     </table>
                 </div>

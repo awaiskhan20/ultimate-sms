@@ -12,6 +12,14 @@ if($table_name == 'med') {
     mysqli_query($connection, "UPDATE media SET status = '$update_status' WHERE id = $id") or die(mysqli_error());
     header("Location: media.php");
 
+} elseif($table_name == 'mess') {
+    $query = mysqli_query($connection, "SELECT status FROM message WHERE id = $id") or die(mysqli_error());
+    $row = mysqli_fetch_array($query);
+
+    $update_status = ($row['status'] == 'DEACTIVE') ? 'ACTIVE' : 'DEACTIVE';
+    mysqli_query($connection, "UPDATE message SET status = '$update_status' WHERE id = $id") or die(mysqli_error());
+    header("Location: sms.php");
+
 } else {
     $query = mysqli_query($connection, "SELECT status FROM category WHERE id = $id") or die(mysqli_error());
     $row = mysqli_fetch_array($query);
