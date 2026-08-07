@@ -69,7 +69,7 @@
                                 </td>
                                 <td>
                                     <a href="edit_sms.php?id=<?php echo $row['id']; ?>" class="label label-info"> <i class="fa fa-edit"></i></a>
-                                    <a href="#" class="label label-important "> <i class="fa fa-trash-o"></i></a>
+                                    <a href="delete_sms.php?id=<?php echo $row['id']; ?>" class="label label-important "> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                             <?php }?>
