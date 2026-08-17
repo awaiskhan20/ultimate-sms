@@ -5,13 +5,10 @@
     <div class="page-sidebar" id="main-menu"> 
           <div class="page-sidebar-wrapper" id="main-menu-wrapper">
         <!-- BEGIN MINI-PROFILE -->
-        <div class="user-info-wrapper"> 
-            <div class="profile-wrapper">
-                <img src="assets/img/image-5.jpg" alt="" data-src="assets/img/image-5.jpg" data-src-retina="assets/img/image-5.jpg" width="69" height="69" />
-            </div>
+        <div class="user-info-wrapper">
             <div class="user-info">
                 <div class="greeting">Welcome</div>
-                <div class="username"><span class="semi-bold">Ayaz Ahmed Mast</span></div> &nbsp; &nbsp;
+                <div class="username"><span class="semi-bold"><?php echo $_SESSION['fullname']; ?></span></div>
             </div>
         </div>
         <!-- END MINI-PROFILE -->

@@ -33,12 +33,16 @@
                                 </th>
                                 <th style="width:30%">Fullname</th>
                                 <th style="width:30%">Email</th>
-                                <th style="width:20%">Member Image</th>
                                 <th style="width:10%">Status</th>
                                 <th style="width:10%">Manage</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                require_once 'config/db.php';
+                                $query = mysqli_query($connection, "SELECT * FROM member WHERE id != 6 AND id != $_SESSION[member_id];") or die(mysqli_error());
+                                while($row = mysqli_fetch_assoc($query)) {
+                            ?>
                             <tr>
                                 <td>
                                     <div class="checkbox check-default">
@@ -46,9 +50,8 @@
                                         <label for="checkbox10"></label>
                                     </div>
                                 </td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>img will be here</td>
+                                <td><?php echo $row['fullname']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
                                 <td>
                                     <a href="#" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>
                                     <a href="#"> <span class="label label-info btn-small"><i class="fa fa-thumbs-o-up"></i></span> </a>
@@ -58,6 +61,9 @@
                                     <a href="#" class="label label-important"> <i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
+                            <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>

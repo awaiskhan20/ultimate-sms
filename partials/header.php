@@ -1,3 +1,6 @@
+<?php
+include 'config/guard.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,16 +87,14 @@
                     <a href="#">
                         <div class="user-details"> 
                             <div class="username">
-                                <span class="bold">Ayaz Ahmed Mast</span>
+                                <span class="bold"><?php echo $_SESSION['fullname']; ?></span>
                             </div>                      
                         </div> 
                     </a>    
                     
                     <!-- END NOTIFICATION CENTER -->
                     <!-- BEGIN PROFILE PICTURE -->
-                    <div class="profile-pic"> 
-                        <img src="assets/img/image-5.jpg" alt="" data-src="assets/img/image-5.jpg" data-src-retina="assets/img/image-5.jpg" width="35" height="35" />
-                    </div>  
+                      
                     <!-- END PROFILE PICTURE -->                
                 </div>
                 <!-- BEGIN HEADER NAV BUTTONS -->
@@ -107,7 +108,7 @@
                             <li><a href="#" target="_blank">Preview</a></li>
                             <li><a href="change_password.php">Change Password</a></li>
                             <li class="divider"></li>                
-                            <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                            <li><a href="logout.php"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
                         </ul>
                     </li>
                     <!-- END SETTINGS -->

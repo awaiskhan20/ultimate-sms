@@ -33,7 +33,7 @@
                                             <option  value="0">-- Select Category --</option>
                                             <?php 
                                               require_once 'config/db.php';
-                                              $query = mysqli_query($connection, "SELECT * FROM category");
+                                              $query = mysqli_query($connection, "SELECT * FROM category WHERE member_id = $_SESSION[member_id]") or die(mysqli_error());
                                               while($row = mysqli_fetch_assoc($query)) {
                                                 echo '<option value="'.$row['id'].'">'.$row['title'].'</option>';
                                               }

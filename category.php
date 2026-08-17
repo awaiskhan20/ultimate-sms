@@ -41,7 +41,7 @@
                             <?php
                             
                             require 'config/db.php';
-                            $sql = mysqli_query($connection, "SELECT * FROM category") or die(mysqli_error());
+                            $sql = mysqli_query($connection, "SELECT * FROM category WHERE member_id = $_SESSION[member_id]") or die(mysqli_error());
                             while($row = mysqli_fetch_array($sql)){
 
                             ?>

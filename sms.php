@@ -42,7 +42,7 @@
                         <tbody>
                             <?php
                                 require_once 'config/db.php';
-                                $query = mysqli_query($connection, "SELECT * FROM message");
+                                $query = mysqli_query($connection, "SELECT * FROM message WHERE member_id = $_SESSION[member_id]") or die(mysqli_error());
                                 while($row = mysqli_fetch_assoc($query)) {
                             ?>
                             <tr>
@@ -59,7 +59,7 @@
                                     $category_row = mysqli_fetch_assoc($category_query);
                                     echo $category_row['title'];
                                 ?></td>
-                                <td><?php echo $row['member_id']; ?></td>
+                                <td><?php echo $_SESSION['fullname']; ?></td>
                                 <td>
                                     <?php if ($row['status'] == 'DEACTIVE'):  ?>
                                     <a href="update_status.php?type=mess&id=<?php echo $row['id']; ?>" > <span class="label label-important btn-small"><i class="fa fa-thumbs-o-down"></i></span></a>

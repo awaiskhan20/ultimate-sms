@@ -1,8 +1,8 @@
 <?php
-
+    session_start();
     require 'config/db.php';
 
-    $member_id = 1;
+    $member_id = $_SESSION['member_id'];
     $date = $_POST['create_date'];
     $title = $_POST['title'];
     $slug = $_POST['slug'];
