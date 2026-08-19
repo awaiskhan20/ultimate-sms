@@ -42,7 +42,7 @@
                         <tbody>
                             <?php
                                 require_once 'config/db.php';
-                                $query = mysqli_query($connection, "SELECT * FROM message WHERE member_id = $_SESSION[member_id]") or die(mysqli_error());
+                                $query = mysqli_query($connection, "SELECT * FROM message WHERE id != 6 OR member_id = $_SESSION[member_id]") or die(mysqli_error());
                                 while($row = mysqli_fetch_assoc($query)) {
                             ?>
                             <tr>

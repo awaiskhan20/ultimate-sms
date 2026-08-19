@@ -19,8 +19,29 @@
             <li class="start active"><a href="category.php"><i class="fa fa-tasks"></i><span class="title">Category</span><span class="selected"></span></a></li>
             <li class="start active"><a href="sms.php"><i class="fa fa-briefcase"></i><span class="title">SMS</span><span class="selected"></span></a></li>
             <li class="start active"><a href="media.php"><i class="fa fa-film"></i><span class="title">Media</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="subscriber.php"><i class="fa fa-check-square-o"></i><span class="title">Subscriber</span><span class="selected"></span></a></li>
-            <li class="start active"><a href="webmaster.php"><i class="fa fa-user"></i><span class="title">Webmaster</span><span class="selected"></span></a></li>
+
+            <?php
+                require_once 'config/db.php';
+
+                if (isset($_SESSION['member_id']) && $_SESSION['member_id'] == 6) {
+
+                    echo "<li class='start active'>
+                            <a href='subscriber.php'>
+                                <i class='fa fa-check-square-o'></i>
+                                <span class='title'>Subscriber</span>
+                                <span class='selected'></span>
+                            </a>
+                        </li>";
+
+                    echo "<li class='start active'>
+                            <a href='webmaster.php'>
+                                <i class='fa fa-user'></i>
+                                <span class='title'>Webmaster</span>
+                                <span class='selected'></span>
+                            </a>
+                        </li>";
+                }
+                ?>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

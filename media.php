@@ -43,8 +43,8 @@
                         <tbody>
                             <?php
                             
-                            require 'config/db.php';
-                            $sql = mysqli_query($connection, "SELECT * FROM media WHERE member_id = $_SESSION[member_id]") or die(mysqli_error());
+                            // require 'config/db.php';
+                            $sql = mysqli_query($connection, "SELECT * FROM media WHERE id != 6 OR member_id = $_SESSION[member_id]") or die(mysqli_error());
                             while($row = mysqli_fetch_array($sql)){
 
                             ?>
